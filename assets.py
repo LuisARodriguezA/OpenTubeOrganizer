@@ -1,0 +1,2 @@
+lista_indice_menu = ["a","b","c","d","e"] # Creación de indices para el menú de la app
+menu = "Bienvenido a OpenTubeOrganizer, ¿Que deseas hacer?\n a. Ver lista de subscripciones\n b. Agregar/Borrar canal\n c. Agregar/Borrar categoría\n d. Borrar información\n e. Salir")
