@@ -1,6 +1,7 @@
 # Imports
 # --------------------------------------------------------------------------------------
 import pandas as pd
+from tabulate import tabulate
 # --------------------------------------------------------------------------------------
 
 
@@ -39,6 +40,29 @@ def menu():
         exit()
 
 def setup():
-    if initial_setup == 0
-    else:
+    # Intentar cargar el DataFrame desde el archivo existente
+    try:
+        # df = pd.read_csv('canales.csv', index_col='Nombre del canal')
+        df = pd.read_csv('canales.csv')
+    except FileNotFoundError:
+        # Si el archivo no existe, crear un DataFrame vacío
+        df = pd.DataFrame(columns=['Nombre del canal', 'Categaoría', 'Enlace del último video'])
+        # df.set_index('Nombre del canal', inplace=True)
+        df.index.names = ['Indices']
+        # df.columns.names= ['group']
+        df.to_csv('canales.csv') # Guardar el DataFrame al final del programa o cuando se realicen cambios
+
+def feed():
+    df = pd.read_csv('canales.csv')
+    print(tabulate(df, headers = 'keys', tablefmt = 'psql'))
+
+def canales():
+    print("N/A")
+
+def categorias():
+    print("N/A")
+
+def borrar():
+    print("N/A")
+
 main()
