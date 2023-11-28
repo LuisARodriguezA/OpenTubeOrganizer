@@ -1,14 +1,10 @@
+# importing the modules
 import pandas as pd
 
-# Intentar cargar el DataFrame desde el archivo existente
-try:
-    df = pd.read_csv('canales.csv', index_col='Nombre del canal')
-except FileNotFoundError:
-    # Si el archivo no existe, crear un DataFrame vacío
-    df = pd.DataFrame(columns=['Nombre del canal', 'Categoría', 'Enlace del último video'])
-    df.set_index('Nombre del canal', inplace=True)
+# creating a DataFrame
+dict = {'Name':['Martha', 'Tim', 'Rob', 'Georgia'],
+		'Maths':[87, 91, 97, 95],
+		'Science':[83, 99, 84, 76]}
+df = pd.DataFrame(dict)
 
-# ... Resto de tu código ...
-
-# Guardar el DataFrame al final del programa o cuando se realicen cambios
-df.to_csv('canales.csv')
+# displaying the DataFrame
