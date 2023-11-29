@@ -1,9 +1,5 @@
-Por supuesto, aquí está la versión actualizada del README.md con la sección adicional que proporcionaste:
-
-# OpenTubeOrganizer
-
 ___
-**OpenTubeOrganizer**
+# **OpenTubeOrganizer**
 ___
 OpenTubeOrganizer es una aplicación de código abierto desarrollada en Python que te permite gestionar y organizar tus canales favoritos de YouTube de manera local. Dado que la función de suscripciones de YouTube puede ser insatisfactoria, OpenTubeOrganizer te permite crear tu propia biblioteca personal de canales, clasificándolos por categorías de tu elección.
 
