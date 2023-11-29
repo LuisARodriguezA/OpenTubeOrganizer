@@ -557,29 +557,29 @@ def estadisticas(df):
 # --------------------------------------------------------------------------------------
 
 def mostrar_y_modificar_categoria():
-    
+    os.system('cls')
     try:
         # Leer el DataFrame desde el archivo CSV de canales
-        df_canales = pd.read_csv('canales.csv')
-        df_canales.index.names = ['Index']
+        df = pd.read_csv('canales.csv')
+        df.index.names = ['Index']
 
         # Mostrar el DataFrame actual con los canales
         print("Canales actuales:")
-        print(df_canales)
+        print(tabulate(df, headers = 'keys', tablefmt = 'psql'))
 
         # Solicitar al usuario el índice del canal que desea modificar
         while True:
             try:
                 indice_modificar = int(input("Ingrese el índice del canal que desea modificar: "))
-                if indice_modificar < 0 or indice_modificar >= len(df_canales):
+                if indice_modificar < 0 or indice_modificar >= len(df):
                     raise ValueError("Índice fuera de rango.")
                 break  # Salir del bucle si no hay errores
             except ValueError:
                 print("Por favor, ingrese un índice válido.")
 
         # Obtener el nombre del canal y su categoría actual
-        canal_modificar = df_canales.loc[indice_modificar, 'Nombre del canal']
-        categoria_actual = df_canales.loc[indice_modificar, 'Categoría']
+        canal_modificar = df.loc[indice_modificar, 'Nombre del canal']
+        categoria_actual = df.loc[indice_modificar, 'Categoría']
 
         # Mostrar información del canal seleccionado
         print(f"\nCanal seleccionado: {canal_modificar}")
@@ -606,15 +606,18 @@ def mostrar_y_modificar_categoria():
                 print("Por favor, ingrese un índice válido.")
 
         # Modificar la categoría del canal en el DataFrame
-        df_canales.loc[indice_modificar, 'Categoría'] = nueva_categoria
+        df.loc[indice_modificar, 'Categoría'] = nueva_categoria
 
         # Guardar el DataFrame actualizado en el archivo CSV de canales
-        df_canales.to_csv('canales.csv', index=False)
+        df.to_csv('canales.csv', index=False)
 
         print(f"\nCategoría de '{canal_modificar}' modificada exitosamente a '{nueva_categoria}'.")
+        menu()
+
     except Exception as e:
         print(f"Error: {str(e)}")
-
+        menu()
+        
 # --------------------------------------------------------------------------------------
 main()
 # --------------------------------------------------------------------------------------
