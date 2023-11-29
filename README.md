@@ -1,6 +1,5 @@
 Por supuesto, aquí está la versión actualizada del README.md con la sección adicional que proporcionaste:
 
-```markdown
 # OpenTubeOrganizer
 
 ___
@@ -64,4 +63,3 @@ OpenTubeOrganizer es una aplicación de código abierto desarrollada en Python q
 **Licencia:**
 
 Este proyecto está bajo la licencia [MIT](LICENSE).
-```
